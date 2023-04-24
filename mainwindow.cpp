@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     model = new QSqlQueryModel(this);
+    sfModel = new QSortFilterProxyModel(this);
 
     loadData();
 }
@@ -46,12 +47,16 @@ void MainWindow::loadData()
     }
 
     model->setQuery("select id, name, done from tasks");
+    model->setHeaderData(0, Qt::Horizontal,"Код");
+    model->setHeaderData(1, Qt::Horizontal,"Наименование");
+    model->setHeaderData(2, Qt::Horizontal,"Выполнено");
 
     if(model->lastError().isValid()){
         qDebug() << model->lastError();
     }
 
-    ui->view->setModel(model);
+    sfModel->setSourceModel(model);
+    ui->view->setModel(sfModel);
 }
 
 void MainWindow::createTasksTable()

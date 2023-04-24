@@ -11,11 +11,27 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Редактирование</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Код</string>
+       </property>
+       <property name="buddy">
+        <cstring>edId</cstring>
+       </property>
+      </widget>
+     </item>
      <item>
       <widget class="QSpinBox" name="edId">
        <property name="maximumSize">
@@ -23,6 +39,19 @@
          <width>200</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="buttonSymbols">
+        <enum>QAbstractSpinBox::NoButtons</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Наименование</string>
+       </property>
+       <property name="buddy">
+        <cstring>edName</cstring>
        </property>
       </widget>
      </item>

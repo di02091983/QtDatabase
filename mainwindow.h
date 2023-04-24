@@ -19,6 +19,7 @@ public:
 private:
     Ui::MainWindow *ui;
     QSqlQueryModel *model;
+    QSortFilterProxyModel *sfModel;
 
     void loadData();
     void createTasksTable();
